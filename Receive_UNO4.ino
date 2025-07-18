@@ -1,26 +1,27 @@
 /*
-* Arduino Wireless Communication Tutorial
-*       Example 1 - Receiver Code
-*                
-* by Dejan Nedelkovski, www.HowToMechatronics.com
-* 
+BikeCarrierParkingSensor project
+
+Unit inside the car:
+Receive US Sensor signal
+Display distance on LCD display
+
 * Library: TMRh20/RF24, https://github.com/tmrh20/RF24/
 */
 
+// Initialize Radio
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
+RF24 radio(7, 8); // CE, CSN
+const byte address[6] = "00001";
 
-// Display on LCD
+// Initialize LCD Display
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
 
 LiquidCrystal_I2C lcd(0x27,16,2);
 
-RF24 radio(7, 8); // CE, CSN
-
-const byte address[6] = "00001";
 
 void setup() {
   Serial.begin(9600);
