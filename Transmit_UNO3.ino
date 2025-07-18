@@ -1,19 +1,22 @@
 /*
-* Arduino Wireless Communication Tutorial
-*     Example 1 - Transmitter Code
-*                
-* by Dejan Nedelkovski, www.HowToMechatronics.com
-* 
+
+BikeCarrierParkingSensor project
+
+Unit on the Bike carrier
+- radio
+- rain resistant Ultrasonic Sensor
+
 * Library: TMRh20/RF24, https://github.com/tmrh20/RF24/
 */
 
+// Radio initialisation
 #include <SPI.h>
 #include <nRF24L01.h>
 #include <RF24.h>
 
 RF24 radio(7, 8); // CE, CSN
 
-
+// Ultrasnic sensor intialisation
 const int trigPin = 3;
 const int echoPin = 4;
 
